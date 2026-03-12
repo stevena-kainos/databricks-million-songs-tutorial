@@ -1,6 +1,12 @@
-from pyspark.sql import DataFrame
 from pyspark.sql.functions import expr, desc
-from pyspark.sql.types import DoubleType, IntegerType, StringType, StructType, StructField
+from pyspark.sql.types import (
+    DoubleType,
+    IntegerType,
+    StringType,
+    StructType,
+    StructField
+)
+
 
 def get_songs_raw_schema():
     return (
@@ -30,18 +36,20 @@ def get_songs_raw_schema():
         )
     )
 
+
 def get_songs_prepared(songs_raw):
-  return (
-    songs_raw
-      .withColumnRenamed("title", "song_title")
-      .select("artist_id", "artist_name", "duration", "release", "tempo", "time_signature", "song_title", "year")
-  )
+    return (
+        songs_raw
+        .withColumnRenamed("title", "song_title")
+        .select("artist_id", "artist_name", "duration", "release", "tempo", "time_signature", "song_title", "year")
+    )
+
 
 def get_top_artists_by_year(songs_prepared_df):
     return (
         songs_prepared_df
-            .filter(expr("year > 0"))
-            .groupBy("artist_name", "year")
-            .count().withColumnRenamed("count", "total_number_of_songs")
-            .sort(desc("total_number_of_songs"), desc("year"))
+        .filter(expr("year > 0"))
+        .groupBy("artist_name", "year")
+        .count().withColumnRenamed("count", "total_number_of_songs")
+        .sort(desc("total_number_of_songs"), desc("year"))
     )
