@@ -6,6 +6,8 @@ Requires:
 - Python
 - Databricks Workspace
 
+*NOTE:* If you fork this repo you will need to install Databricks App against Github to allow Databricks git integration in the workspace, it will prompt you in Databricks the first time you attempt to push.
+
 ## Development environment
 
 I'm using this repo as a test of developing Databricks pipelines with a combination of Databrick Workspace GUI, Visual Studio Code and Copilot integration. Below are instructions for how I setup my environment.
