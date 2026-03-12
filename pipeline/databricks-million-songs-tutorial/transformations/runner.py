@@ -1,6 +1,6 @@
 # Import modules
 from pyspark import pipelines as dp
-from pyspark import sparkContext as spark
+from pyspark.sql import SparkSession
 from utilities.util import (
     get_songs_raw_schema,
     get_songs_prepared,
@@ -10,7 +10,11 @@ from utilities.util import (
 # Define the path to the source data
 file_path = "/databricks-datasets/songs/data-001/"
 
+# Create Spark session
+spark = SparkSession.builder.getOrCreate()
 
+
+# Ingest data into songs_raw
 @dp.table(
     comment="Raw data from a subset of the Million Song Dataset; a collection of features \
         and metadata for contemporary music tracks."
