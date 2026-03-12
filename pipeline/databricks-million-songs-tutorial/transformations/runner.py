@@ -16,8 +16,8 @@ spark = SparkSession.builder.getOrCreate()
 
 # Ingest data into songs_raw
 @dp.table(
-    comment="Raw data from a subset of the Million Song Dataset; a collection of features \
-        and metadata for contemporary music tracks."
+    comment="Raw data from a subset of the Million Song Dataset; a \
+        collection of features and metadata for contemporary music tracks."
 )
 def songs_raw():
     return (spark.readStream
@@ -39,10 +39,11 @@ def songs_prepared():
     return get_songs_prepared(spark.read.table("songs_raw"))
 
 
-# Define a materialized view that has a filtered, aggregated, and sorted view of the data
+# Define a materialized view that has a filtered, aggregated, and
+# sorted view of the data
 @dp.materialized_view(
-    comment="A table summarizing counts of songs released by the artists who released the \
-        most songs each year."
+    comment="A table summarizing counts of songs released by the artists who \
+        released the most songs each year."
 )
 def top_artists_by_year():
     return get_top_artists_by_year(spark.read.table("songs_prepared"))

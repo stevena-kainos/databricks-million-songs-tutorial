@@ -41,7 +41,8 @@ def get_songs_prepared(songs_raw):
     return (
         songs_raw
         .withColumnRenamed("title", "song_title")
-        .select("artist_id", "artist_name", "duration", "release", "tempo", "time_signature", "song_title", "year")
+        .select("artist_id", "artist_name", "duration", "release",
+                "tempo", "time_signature", "song_title", "year")
     )
 
 
