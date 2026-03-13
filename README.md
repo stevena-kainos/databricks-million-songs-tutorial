@@ -44,3 +44,15 @@ py.test
 ```
 flake8
 ```
+
+### TODO
+
+- Bundle/install pipeline
+  - deploy scripts/config
+  - document
+ into Databricks scripts and docs
+- Github Actions
+  - linting
+  - pytest
+  - snyk vulnerabilities
+- Align flake8 linting with Databricks workspace editing to prevent large numbers of linting errors
