@@ -5,6 +5,7 @@ Code for the [Databricks SDP million songs tutorial](https://docs.databricks.com
 Requires:
 - Python
 - Databricks Workspace
+- JVM (for spark)
 
 *NOTE:* If you fork this repo you will need to install Databricks App against Github to allow Databricks git integration in the workspace, it will prompt you in Databricks the first time you attempt to push.
 
@@ -37,4 +38,10 @@ pip install -e .   # install package using setup.py in editable mode
 * Then run the tests using 
 ```
 py.test
-``` 
+```
+
+### Run linter
+
+```
+flake8
+```
