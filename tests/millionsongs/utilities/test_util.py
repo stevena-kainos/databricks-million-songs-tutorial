@@ -1,7 +1,7 @@
 import pytest
 from pyspark.sql import SparkSession
-# from pyspark.sql.types import StructType, StringType, IntegerType, DoubleType
-# # from pipeline.databricks-million-songs-tutorial.utilities.util import get_songs_raw_schema
+from pyspark.sql.types import StructType, StringType, IntegerType, DoubleType
+from millionsongs.utilities.util import get_songs_raw_schema
 
 
 # .utilities.util import get_songs_raw_schema
@@ -18,13 +18,13 @@ def spark():
     return SparkSession.builder.appName("test").getOrCreate()
 
 
-# def test_get_songs_raw_schema():
-#     schema = get_songs_raw_schema()
-#     assert isinstance(schema, StructType)
-#     assert len(schema.fields) == 20
-#     assert schema["artist_id"].dataType == StringType()
-#     assert schema["duration"].dataType == DoubleType()
-#     assert schema["year"].dataType == IntegerType()
+def test_get_songs_raw_schema():
+    schema = get_songs_raw_schema()
+    assert isinstance(schema, StructType)
+    assert len(schema.fields) == 20
+    assert schema["artist_id"].dataType == StringType()
+    assert schema["duration"].dataType == DoubleType()
+    assert schema["year"].dataType == IntegerType()
 
 
 # def test_get_songs_prepared(spark):

@@ -21,4 +21,20 @@ I'm using this repo as a test of developing Databricks pipelines with a combinat
 - Databricks
 - GitHub Copilot Chat
 
-1. Clone repo and open in VS Code
+### Getting started
+
+* Install the requirements by typing
+```
+pip install -r requirements.txt
+```
+
+### Run tests
+
+* To run the tests, you need to run the command:
+```python
+pip install -e .   # install package using setup.py in editable mode
+```
+* Then run the tests using 
+```
+py.test
+``` 
