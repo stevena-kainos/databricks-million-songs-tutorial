@@ -20,6 +20,7 @@ I'm using this repo as a test of developing Databricks pipelines with a combinat
 - Black Formatter
 - Databricks
 - GitHub Copilot Chat
+- GitHub Actions
 
 ### Getting started
 
