@@ -3,9 +3,8 @@
 Code for the [Databricks SDP million songs tutorial](https://docs.databricks.com/aws/en/getting-started/data-pipeline-get-started).
 
 Requires:
-- Python
-- Databricks Workspace
-- JVM (for spark)
+- Python 3.14
+- OpenJDK 17 (for spark)
 
 *NOTE:* If you fork this repo you will need to install Databricks App against Github to allow Databricks git integration in the workspace, it will prompt you in Databricks the first time you attempt to push.
 
