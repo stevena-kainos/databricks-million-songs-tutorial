@@ -9,7 +9,7 @@
 -- COMMAND ----------
 
 USE CATALOG `students_data`;
-USE SCHEMA `s-alexander`;
+USE SCHEMA `s-alexander-songs`;
 
 -- COMMAND ----------
 
